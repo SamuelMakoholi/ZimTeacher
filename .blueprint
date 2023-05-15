@@ -1,0 +1,52 @@
+created:
+    - app/Http/Controllers/TeacherController.php
+    - app/Http/Controllers/LeaveController.php
+    - app/Http/Controllers/TransferController.php
+    - app/Http/Controllers/SchoolController.php
+    - database/factories/TeacherFactory.php
+    - database/factories/LeaveFactory.php
+    - database/factories/TransferFactory.php
+    - database/factories/SchoolFactory.php
+    - database/migrations/2023_05_13_110439_create_teachers_table.php
+    - database/migrations/2023_05_13_110440_create_leaves_table.php
+    - database/migrations/2023_05_13_110441_create_transfers_table.php
+    - database/migrations/2023_05_13_110442_create_schools_table.php
+    - app/Models/Teacher.php
+    - app/Models/Leave.php
+    - app/Models/Transfer.php
+    - app/Models/School.php
+    - tests/Feature/Http/Controllers/TeacherControllerTest.php
+    - tests/Feature/Http/Controllers/LeaveControllerTest.php
+    - tests/Feature/Http/Controllers/TransferControllerTest.php
+    - tests/Feature/Http/Controllers/SchoolControllerTest.php
+    - app/Http/Requests/TeacherStoreRequest.php
+    - app/Http/Requests/TeacherUpdateRequest.php
+    - app/Http/Requests/LeaveStoreRequest.php
+    - app/Http/Requests/LeaveUpdateRequest.php
+    - app/Http/Requests/TransferStoreRequest.php
+    - app/Http/Requests/TransferUpdateRequest.php
+    - app/Http/Requests/SchoolStoreRequest.php
+    - app/Http/Requests/SchoolUpdateRequest.php
+    - resources/views/teacher/index.blade.php
+    - resources/views/teacher/create.blade.php
+    - resources/views/teacher/show.blade.php
+    - resources/views/teacher/edit.blade.php
+    - resources/views/leave/index.blade.php
+    - resources/views/leave/create.blade.php
+    - resources/views/leave/show.blade.php
+    - resources/views/leave/edit.blade.php
+    - resources/views/transfer/index.blade.php
+    - resources/views/transfer/create.blade.php
+    - resources/views/transfer/show.blade.php
+    - resources/views/transfer/edit.blade.php
+    - resources/views/school/index.blade.php
+    - resources/views/school/create.blade.php
+    - resources/views/school/show.blade.php
+    - resources/views/school/edit.blade.php
+updated:
+    - routes/web.php
+models:
+    Teacher: { full_name: 'string:400', email: 'string:100', gender: 'string:20', role: 'string:20', phone: 'string:400', id_no: 'string:100', dob: 'string:30', grade_level: 'string:200', district: 'string:100', province: 'string:100', class_course: 'string:255', qualification: 'string:400', school: 'string:150', tchr_password: 'string:8' }
+    Leave: { teacher_id: 'teacher_id foreign:teachers', start_date: 'string:50', end_date: 'string:50', leave_type: 'string:200', reason_for_leave: 'string:200', status: 'string:50' }
+    Transfer: { teacher_id: 'teacher_id foreign:teachers', current_place: 'string:400', from_school: 'string:200', to_school: 'string:200', reason_for_transfer: 'string:400', date_of_transfer: 'string:400', status: 'string:20' }
+    School: { name: 'string:400' }

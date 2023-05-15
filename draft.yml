@@ -1,0 +1,55 @@
+models:
+  Teacher:
+    full_name: string:400
+    email: string:100
+    gender: string:20
+    role: string:20
+    phone: string:400
+    id_no: string:100
+    dob: string:30
+    grade_level: string:200
+    district: string:100
+    province: string:100
+    class_course: string:255
+    qualification: string:400
+    school: string:150
+    tchr_password: string:8
+
+  Leave:
+    teacher_id: teacher_id foreign:teachers
+    start_date: string:50
+    end_date: string:50
+    leave_type: string:200
+    reason_for_leave: string:200
+    status: string:50
+
+  Transfer:
+    teacher_id: teacher_id foreign:teachers
+    current_place: string:400
+    from_school: string:200
+    to_school: string:200
+    reason_for_transfer: string:400
+    date_of_transfer: string:400
+    status: string:20
+
+  School:
+    name: string:400
+
+  
+
+
+controllers:
+  Teacher:
+    resource: index, create, store, send, show, edit, update, destroy
+
+  Leave:
+    resource: index, create, store, send, show, edit, update, destroy
+
+  Transfer:
+    resource: index, create, store, send, show, edit, update, destroy
+
+  School:
+     resource: index, create, store, send, show, edit, update, destroy
+
+
+
