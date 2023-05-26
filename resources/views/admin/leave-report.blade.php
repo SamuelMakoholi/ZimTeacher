@@ -20,7 +20,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Leave Request</div>
+                                            <a class="nav-link" href="{{ route('admin.leave')}}">
+                                                Pending Leave Request</div></a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $repo }}</div>
                                         </div>
                                         <div class="col-auto">
@@ -36,9 +37,11 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                        {{-- <a  class="text-xs font-weight-bold text-success text-uppercase mb-1" hre={{ route('admin.approved.leave')}}>   Approved Leave Request</a> --}}
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Approved Leave Request</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $repo1 }}</div>
+                                            <a class="nav-link" href="{{ route('admin.approved.leave')}}">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $repo1 }}</div></a>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -49,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    {{-- <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -65,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
                     </div>

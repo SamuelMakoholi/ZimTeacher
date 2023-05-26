@@ -22,7 +22,8 @@ class AdminController extends Controller
     {
         $teachers = DB::table('users')
         ->join('teachers', 'users.id' ,'=', 'teachers.user_id')
-        ->select('teachers.*', 'users.name', 'users.email')->get();
+        ->select('teachers.*', 'users.name', 'users.email')->paginate(3);
+
         return view('admin.teachers', compact('teachers'));
        // return response()->json($teachers);
     }
@@ -36,6 +37,27 @@ class AdminController extends Controller
         return view('admin.leave', compact('leaves'));
     }
 
+    //approved leave
+    public function approved_leave()
+    {
+        $leaves = DB::table('users')
+        ->join('leaves', 'users.id','=','leaves.user_id')
+        ->join('teachers', 'users.id', '=', 'teachers.user_id')
+        ->select('leaves.*','teachers.*','users.name','users.email')->where('status', 'approved')->get();
+        return view('admin.approved', compact('leaves'));
+    }
+
+    // //pending leave
+    // public function pending_leave()
+    // {
+    //     $leaves = DB::table('users')
+    //     ->join('leaves', 'users.id','=','leaves.user_id')
+    //     ->join('teachers', 'users.id', '=', 'teachers.user_id')
+    //     ->select('leaves.*','teachers.*','users.name','users.email')->where('status', 'approved')->get();
+    //     return view('admin.approved', compact('leaves'));
+    // }
+
+
     public function transfers()
     {
         $transfers = DB::table('users')
@@ -43,6 +65,16 @@ class AdminController extends Controller
         // ->join('teachers', 'users.id', '=', 'teachers.user_id')
         ->select('transfers.*','users.name','users.email')->where('status', 'pending')->get();
         return view('admin.transfers', compact('transfers'));
+    }
+    //approved transfers
+
+    public function approve_transfers()
+    {
+        $transfers = DB::table('users')
+        ->join('transfers', 'users.id','=','transfers.user_id')
+        // ->join('teachers', 'users.id', '=', 'teachers.user_id')
+        ->select('transfers.*','users.name','users.email')->where('status', 'approved')->get();
+        return view('admin.trransfere-approved', compact('transfers'));
     }
 
     public function leaveReport()

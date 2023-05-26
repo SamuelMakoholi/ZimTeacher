@@ -50,6 +50,14 @@
                         </tr>
                     </tfoot>
                 </table>
+                 <span>{{ $teachers->links() }}</span>
+
+                 <style>
+                 .w-5{
+                    display: none;
+                 }
+                 
+                 </style>
 
                     
 

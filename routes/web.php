@@ -34,7 +34,9 @@ Route::group(['middleware' =>['auth', 'role:admin']], function() {
     Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home.admin');
     Route::get('/admin/teachers', [App\Http\Controllers\AdminController::class, 'teachers'])->name('admin.teacher');
     Route::get('/admin/leaves', [App\Http\Controllers\AdminController::class, 'leave'])->name('admin.leave');
+    Route::get('/admin/leaves/approve', [App\Http\Controllers\AdminController::class, 'approved_leave'])->name('admin.approved.leave');
     Route::get('/admin/transfers', [App\Http\Controllers\AdminController::class, 'transfers'])->name('admin.transfer');
+    Route::get('/admin/transfers/approve', [App\Http\Controllers\AdminController::class, 'approve_transfers'])->name('approve.transfers');
     Route::get('/admin/leave-report', [App\Http\Controllers\AdminController::class, 'leaveReport'])->name('admin.leave.report');
     Route::get('/admin/transfer-report', [App\Http\Controllers\AdminController::class, 'TransferReport'])->name('admin.leave.transfer');
     Route::post('/admin/transfer-report', [App\Http\Controllers\AdminController::class, 'approveTransfere'])->name('admin.approve.transfer');

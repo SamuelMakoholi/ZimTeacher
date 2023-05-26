@@ -39,7 +39,7 @@
                             <th>Leave Type</th>
                             <th>Reason For Leave</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            {{-- <th>Action</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -52,9 +52,8 @@
                                 <td>{{ $leave->leave_type}}</td>
                                 {{-- <td>{{ $leave->grade_level }}</td> --}}
                                 <td>{{ $leave->reason_for_leave }}</td>
-                                <td><p class="text-xs font-weight-bold text-warning text-uppercase mb-1">{{ $leave->status }}</p></td>
-                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editLeaveModal{{$leave->id}}">Approve</button>
-                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editLeaveModal{{$leave->id}}">Disapprove</button>
+                                <td><p class="text-xs font-weight-bold text-success text-uppercase mb-1">{{ $leave->status }}</p></td>
+                                {{-- <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editLeaveModal{{$leave->id}}">Approve</button> --}}
 </td>
                             </tr>
 
@@ -115,8 +114,6 @@
                         </tr>
                     </tfoot>
                 </table>
-
-               
 
                     
 
