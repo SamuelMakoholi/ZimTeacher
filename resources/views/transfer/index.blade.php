@@ -124,7 +124,7 @@
 
                 </table>
 
-            <div class="modal fade" id="addtransferModal" tabindex="-1" role="dialog" aria-labelledby="addtransferModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addtransferModal" tabindex="-1" role="dialog" aria-labelledby="addtransferModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">

@@ -36,6 +36,7 @@ class AdminController extends Controller
         ->select('leaves.*','teachers.*','users.name','users.email')->where('status', 'pending')->get();
         return view('admin.leave', compact('leaves'));
     }
+    
 
     //approved leave
     public function approved_leave()
