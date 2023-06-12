@@ -34,6 +34,9 @@
                     <div class="col-lg-12">
                         <div class="p-5">
                             <div class="text-center">
+                                <div>
+                                    <img src="{{ asset('img/zim.png') }}" width="150" height="70" alt="">
+                                </div>
                                 <h1 class="h4 text-gray-900 mb-4">Zimbawe Teachers Leave and Transfer Management System</h1>
                             </div>
                             {{-- <form class="user">
@@ -103,7 +106,7 @@
                                 {{Session::get('error')}}
                             </div> --}}
                             @endif
-                                <h1 class="alert alert-success">You have succesffuly Registered</h1>
+
                             <form method="POST" action="{{ route('teacher.store')}}">
                             @csrf
                                 <div class="form-group">

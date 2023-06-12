@@ -39,14 +39,17 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
+                                        <div>
+                                            <img src="{{ asset('img/zim.png') }}" width="150" height="70" alt="">
+                                        </div>
                                         <h1 class="h4 text-gray-900 mb-4">Zimbabwe Teachers Leave and Transfer Management System</h1>
                                     </div>
                                     <form class="user" method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="form-group">
                                             <input id="email" type="email" class="form-control form-control-user
-                                            @error('email') is-invalid @enderror" 
-                                            name="email" value="{{ old('email') }}" 
+                                            @error('email') is-invalid @enderror"
+                                            name="email" value="{{ old('email') }}"
                                             required autocomplete="email" autofocus>
 
                                             @error('email')
@@ -57,8 +60,8 @@
                                     </div>
 
                                         <div class="form-group">
-                                                <input id="password" type="password" class="form-control form-control-user 
-                                                @error('password') is-invalid @enderror" name="password" 
+                                                <input id="password" type="password" class="form-control form-control-user
+                                                @error('password') is-invalid @enderror" name="password"
                                                 required autocomplete="current-password">
 
                                                 @error('password')
@@ -66,9 +69,9 @@
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                        
+
                                         </div>
-                        
+
 
                             <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
@@ -84,7 +87,7 @@
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                     {{ __('Login') }}
                                 </button>
-                                        
+
                                     </form>
                                     <hr>
                                     <div class="text-center">
